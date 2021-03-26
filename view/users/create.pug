@@ -1,0 +1,18 @@
+extends ../layout/layout.pug
+block content
+    div(class="container text-center")
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6")
+                h1(class="text-info") Create
+                a(href="#") 
+                    h5(class="text-danger") Back
+                if errors
+                    each error in errors 
+                        div.alert.alert-danger(role='alert')= error
+                form(action="/users/create", method="POST", class="form-group") 
+                    label(for="name") Name
+                    input(type="text", name="name", class="form-control ml-3", value = values ? values.name:'')
+                    label(for="phone") Phone
+                    input(type="text", name="phone", class="form-control ml-3", value = values ? values.phone:'')
+                    button(type="submit" class="btn btn-info mt-2") Submit

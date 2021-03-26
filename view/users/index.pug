@@ -1,0 +1,31 @@
+extends ../layout/layout.pug
+block content
+    div(class="container")
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6 text-center")
+                h1(style="color:#00587a;") User
+                h5
+                    a(href="/users/create", style="text-decoration:none") Add User
+                form(action="/users/search" method="GET" class="form-group d-flex")
+                    input(type="text", name="q" class="form-control",style="margin-right: 5px;"
+                    )
+                    button(type="submit" class="btn btn-primary") search
+            div(class="col-sm-3")
+            div(class="col-sm-3")
+            div(class="col-sm-6 mt-2")
+                table.table
+                    thead
+                        tr
+                        th(scope='col') #
+                        th(scope='col') Name
+                        th(scope='col') phone
+                        th(scope='col') action
+                    tbody
+                        each user in users
+                            tr
+                            th(scope='row') 1
+                            td= user.name
+                            td= user.phone
+                            td 
+                                a(style="text-decoration:none", href="/users/"+ user.id) View 

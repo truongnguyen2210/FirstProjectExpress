@@ -1,0 +1,20 @@
+extends ../layout/layout.pug
+block content
+    div(class="container")
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6 text-center")
+                h1(class="text-danger") Products
+                h5
+                    a(href="/users/create") Add Product
+                form(action="/products/search" method="GET" class="form-group d-flex")
+                    input(type="text", name="q" class="form-control")
+                    button(type="submit" class="btn btn-primary") search
+            div(class="col-sm-3")
+            div(class="col-sm-3")
+            div(class="col-sm-6 mt-2")
+                ul(class="list-group list-group-flush")
+                    each product in products
+                        a(href="/products/"+ product.id) 
+                            li(class="list-group-item")= product.name
+    
