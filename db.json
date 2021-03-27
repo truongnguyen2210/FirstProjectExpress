@@ -1,35 +1,6 @@
 {
   "users": [
     {
-      "name": "Trưởng Thanh Nguyễn",
-      "id": "fxHeEk2p1"
-    },
-    {
-      "name": "Điện Ảnh",
-      "id": "_ELD2Tbx_"
-    },
-    {
-      "name": "Báo Thị Đào",
-      "id": "hwZr0gjXo"
-    },
-    {
-      "name": "Trưởng Thanh Nguyễn",
-      "id": "Y9pLd9v3E"
-    },
-    {
-      "name": "Trưởng Thanh Nguyễn",
-      "id": "YN1atl_h_"
-    },
-    {
-      "name": "new user",
-      "id": "cMQFDjfDk"
-    },
-    {
-      "name": "Trưởng Thanh Nguyễn",
-      "phone": "0877236377",
-      "id": "YtoN1rENe"
-    },
-    {
       "name": "Nguyễn Thanh Tùng",
       "phone": "0869863205",
       "id": "2ohMpSVPH"
@@ -42,12 +13,8 @@
     {
       "name": "Trưởng Thanh Nguyễn",
       "phone": "0877236377",
+      "password": "123456",
       "id": "FPDq5L923"
-    },
-    {
-      "name": "Thể Thao",
-      "phone": "few",
-      "id": "NEDCwgtQ9"
     }
   ]
 }

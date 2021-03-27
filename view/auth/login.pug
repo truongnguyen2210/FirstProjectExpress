@@ -1,0 +1,18 @@
+extends ../layout/layout.pug
+block content
+    div(class="container text-center")
+        div(class="row")
+            div(class="col-sm-3")
+            divhahha(class="col-sm-6")
+                h1(class="text-info") Login
+                a(href="http://localhost:3000/") 
+                    h5(class="text-danger") Back
+                if errors
+                    each error in errors 
+                        div.alert.alert-danger(role='alert')= error
+                form(action="/auth/postLogin", method="POST", class="form-group") 
+                    label(for="phone") Phone
+                    input#phone(type="text", name="phone", class="form-control ml-3", value = values ? values.phone:'')
+                    label(for="password") Password
+                    input#password(type="password", name="password", class="form-control ml-3", value = values ? values.password:'')
+                    button(type="submit" class="btn btn-info mt-2") Login
