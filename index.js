@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var port = 3000;
+var md5 = require('md5');
 var db = require('./db');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
