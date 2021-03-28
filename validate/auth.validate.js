@@ -19,19 +19,21 @@ module.exports.postLogin = function(req, res, next) {
         });
         return;
     }
-    res.cookie("userId", user.id);
+    res.cookie("userId", user.id, {
+        signed: true
+    });
     next();
 }
 module.exports.requiredAuth = function(req, res, next) {
-    console.log(req.cookies.userId);
-    if (!req.cookies.userId) {
+    if (!req.signedCookies.userId) {
         res.redirect('/auth/login')
         return;
     }
-    var user = db.get("users").find({ id: req.cookies.userId }).value();
+    var user = db.get("users").find({ id: req.signedCookies.userId }).value();
     if (!user) {
         res.redirect('/auth/login')
         return;
     }
+    res.locals.user = user;
     next();
 }

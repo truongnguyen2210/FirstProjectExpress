@@ -19,8 +19,7 @@ html(lang='en')
                         li(class="nav-item")
                             a(class="nav-link active",aria-current="page",href="/products") Products
                         li(class="nav-item")
-                            a(class="nav-link active",aria-current="page",href="/users") Users
-                    form(class="d-flex")
-                        input(class="form-control me-2",type="search",placeholder="Search",aria-label="Search")
-                        button(class="btn btn-outline-success",type="submit") Search
+                            a(class="nav-link active",aria-current="page",href="/users") User
+                    if user
+                        p=user.name
         block content

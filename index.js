@@ -11,10 +11,11 @@ var authRouter = require('./routers/auth.route')
 var authMiddleware = require('./validate/auth.validate')
 
 app.use(express.static("public"));
-app.use(cookieParser());
+app.use(cookieParser("guyfegwhfbewkhi78"));
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 
 app.set("view engine", "pug");
 app.set("views", "./view");
