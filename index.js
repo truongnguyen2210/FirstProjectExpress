@@ -1,3 +1,6 @@
+//https://www.npmjs.com/package/dotenv
+// create file .env and add this  file in gitignore
+require("dotenv").config();
 var express = require('express');
 var app = express();
 var port = 3000;
@@ -11,7 +14,7 @@ var authRouter = require('./routers/auth.route')
 var authMiddleware = require('./validate/auth.validate')
 
 app.use(express.static("public"));
-app.use(cookieParser("guyfegwhfbewkhi78"));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
