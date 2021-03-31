@@ -12,12 +12,14 @@ block content
                     button(type="submit" class="btn btn-primary") search
             div.mt-10(class="col-sm-12")
                 .row
-                    each prod in products 
-                        .col-sm-3
-                            .card
-                            img.card-img-top(src=prod.image, alt='...' width="100%")
-                            .card-body
-                                a(href="/products/"+ prod.id)
-                                    h5.card-title=prod.name
-                                p.card-text=prod.description
-    
+                    .card-group
+                        each pro in products
+                            .col-sm-3
+                                .card
+                                    img.card-img-top(src=pro.image, alt='...')
+                                    .card-body
+                                    a(href="/products/"+ pro.id)
+                                            h5.card-title=pro.name
+                                    p.card-text=pro.description
+                                    p.card-text
+                                        a.btn.btn-primary(href='#') Go somewhere
