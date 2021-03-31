@@ -3,18 +3,21 @@ block content
     div(class="container")
         div(class="row")
             div(class="col-sm-3")
-            div(class="col-sm-6 text-center")
+            div(class="col-sm-6 text-center mb-5")
                 h1(class="text-danger") Products
                 h5
                     a(href="/users/create") Add Product
                 form(action="/products/search" method="GET" class="form-group d-flex")
                     input(type="text", name="q" class="form-control")
                     button(type="submit" class="btn btn-primary") search
-           
-            div(class="col-sm-3")
-            div(class="col-sm-6 mt-2")
-                ul(class="list-group list-group-flush")
-                    each product in products
-                        a(href="/products/"+ product.id) 
-                            li(class="list-group-item")= product.name
+            div.mt-10(class="col-sm-12")
+                .row
+                    each prod in products 
+                        .col-sm-3
+                            .card
+                            img.card-img-top(src=prod.image, alt='...' width="100%")
+                            .card-body
+                                a(href="/products/"+ prod.id)
+                                    h5.card-title=prod.name
+                                p.card-text=prod.description
     
