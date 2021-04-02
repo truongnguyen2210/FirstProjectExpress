@@ -1,4 +1,5 @@
 var express = require('express');
+//install multer
 var multer = require('multer')
 var upload = multer({ dest: './public/uploads/' })
 var router = express.Router();
