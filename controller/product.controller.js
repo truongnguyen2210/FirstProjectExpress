@@ -14,11 +14,11 @@ module.exports.index = function(req, res) {
 };
 module.exports.search = function(req, res) {
     var q = req.query.q;
-    var marchedUsers = db.get("users").value().filter(function(user) {
-        return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+    var marchedProducts = db.get("products").value().filter(function(product) {
+        return product.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
-    res.render("users/index", {
-        users: marchedUsers
+    res.render("products/index", {
+        products: marchedProducts
     });
 };
 module.exports.create = function(req, res) {

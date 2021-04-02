@@ -10,9 +10,14 @@ block content
                 if errors
                     each error in errors 
                         div.alert.alert-danger(role='alert')= error
-                form(action="/users/create", method="POST", class="form-group") 
-                    label(for="name") Name
-                    input(type="text", name="name", class="form-control ml-3", value = values ? values.name:'')
-                    label(for="phone") Phone
-                    input(type="text", name="phone", class="form-control ml-3", value = values ? values.phone:'')
+                form(action="/users/create", method="POST", class="form-group", enctype="multipart/form-data") 
+                    .form-group
+                        label(for="name") Name
+                        input(type="text", name="name", class="form-control ml-3", value = values ? values.name:'')
+                    .form-group
+                        label(for="phone") Phone
+                        input(type="text", name="phone", class="form-control ml-3", value = values ? values.phone:'')
+                    .form-group
+                        label(for="avatar") Avatar
+                        input(type="file", name="avatar", class="form-control ml-3")
                     button(type="submit" class="btn btn-info mt-2") Submit

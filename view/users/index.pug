@@ -17,14 +17,15 @@ block content
                 table.table
                     thead
                         tr
-                        th(scope='col') #
+                        th(scope='col') Avatar
                         th(scope='col') Name
                         th(scope='col') phone
                         th(scope='col') action
                     tbody
                         each user in users
                             tr
-                            th(scope='row')= 1
+                            td 
+                                img(src=user.avatar, alt="avatar", width="60")
                             td= user.name
                             td= user.phone
                             td 
