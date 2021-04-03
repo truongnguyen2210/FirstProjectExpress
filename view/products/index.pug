@@ -10,16 +10,15 @@ block content
                 form(action="/products/search" method="GET" class="form-group d-flex")
                     input(type="text", name="q" class="form-control")
                     button(type="submit" class="btn btn-primary") search
-            div.mt-10(class="col-sm-12")
-                .row
-                    .card-group
-                        each pro in products
-                            .col-sm-3
-                                .card
-                                    img.card-img-top(src=pro.image, alt='...')
-                                    .card-body
-                                    a(href="/products/"+ pro.id)
-                                            h5.card-title=pro.name
-                                    p.card-text=pro.description
-                                    p.card-text
-                                        a.btn.btn-primary(href='#') Go GO
+    div(class="container")
+        .row
+            each pro in products
+                .col-sm-3
+                    .card
+                        img.card-img-top(src=pro.image, alt='...')
+                        .card-body
+                            a(href="/products/"+ pro.id)
+                                h5.card-title=pro.name
+                            p.card-text=pro.description
+                            p.card-text
+                                a.btn.btn-primary(href='/cart/add/'+ pro.id) Add to cart
